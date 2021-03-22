@@ -40,7 +40,7 @@ implementation is more memory efficient.
 import collections
 import tensorflow.compat.v1 as tf
 
-slim = tf.contrib.slim
+slim = import tf_slim as slim
 
 
 class Block(collections.namedtuple('Block', ['scope', 'unit_fn', 'args'])):
