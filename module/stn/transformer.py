@@ -1,4 +1,4 @@
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 
 def spatial_transformer_network(input_fmap, theta, out_dims=None, **kwargs):

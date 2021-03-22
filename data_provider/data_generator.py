@@ -2,7 +2,7 @@ import time
 import os
 import random
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 import cv2
 from itertools import compress
 from data_provider.data_utils import check_and_validate_polys, crop_area, rotate_image, generate_rbox, get_project_matrix_and_width, sparse_tuple_from, crop_area_fix

@@ -1,5 +1,5 @@
-import tensorflow as tf
-from tensorflow.contrib import slim, rnn
+import tensorflow.compat.v1 as tf
+import tf_slim as slim, rnn
 import numpy as np
 import config
 import os

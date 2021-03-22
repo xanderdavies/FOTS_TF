@@ -3,7 +3,7 @@ from .stn import spatial_transformer_network as transformer
 sys.path.append("..")
 import numpy as np
 import cv2
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 import math
 # import icdar
 import config
