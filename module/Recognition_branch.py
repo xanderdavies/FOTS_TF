@@ -3,7 +3,7 @@ import tf_slim as slim
 import numpy as np
 import config
 import os
-import tf.compat.v1.nn.rnn_cell as rnn
+import tensorflow.compat.v1.nn.rnn_cell as rnn
 
 
 class Recognition(object):
