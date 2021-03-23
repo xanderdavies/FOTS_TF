@@ -9,6 +9,8 @@ import locality_aware_nms as nms_locality
 import lanms
 from bktree import BKTree, levenshtein, list_words
 
+tf.compat.v1.disable_eager_execution() # Xander added. Not idea, turns off eager execution for compatability
+
 tf.app.flags.DEFINE_string('test_data_path', '/home/qz/data/ICDAR15/ch4_test_images/', '')
 tf.app.flags.DEFINE_string('gpu_list', '0', '')
 tf.app.flags.DEFINE_string('checkpoint_path', 'checkpoints/', '')

@@ -3,6 +3,8 @@ import numpy as np
 import tensorflow.compat.v1 as tf
 import tf_slim as slim
 
+tf.compat.v1.disable_eager_execution() # Xander added. Not idea, turns off eager execution for compatability
+
 tf.app.flags.DEFINE_integer('input_size', 512, '')
 tf.app.flags.DEFINE_integer('batch_size_per_gpu', 12, '')
 tf.app.flags.DEFINE_integer('num_readers', 6, '')
