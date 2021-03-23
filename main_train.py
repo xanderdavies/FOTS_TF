@@ -183,7 +183,6 @@ def main(argv=None):
                 """
 
             if step % FLAGS.save_checkpoint_steps == 0:
-                tf.saved_model.simple_save(sess, f'./{step // FLAGS.save_checkpoint_steps}')
                 saver.save(sess, FLAGS.checkpoint_path + 'model.ckpt', global_step=global_step)
 
             if step % FLAGS.save_summary_steps == 0:
