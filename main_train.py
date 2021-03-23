@@ -152,7 +152,6 @@ def main(argv=None):
         start = time.time()
         for step in range(FLAGS.max_steps):
             data = next(dg)
-            print(data)
             inp_dict = {input_images: data[0],
                         input_score_maps: data[2],
                         input_geo_maps: data[3],

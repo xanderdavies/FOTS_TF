@@ -136,7 +136,6 @@ def generator(input_images_dir, input_gt_dir, input_size=512, batch_size=12, ran
                     count = 0
             except Exception as e:
                 import traceback
-                print(im_fn)
                 traceback.print_exc()
                 continue
 
