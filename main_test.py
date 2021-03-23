@@ -97,7 +97,7 @@ def detect(score_map, geo_map, timer, score_map_thresh=0.8, box_thresh=0.1, nms_
     start = time.time()
     text_box_restored = restore_rectangle(xy_text[:, ::-1]*4, geo_map[xy_text[:, 0], xy_text[:, 1], :]) # N*4*2
     print('{} text boxes before nms'.format(text_box_restored.shape[0]))
-    boxes = np.zeros((text_box_restored.shape[0], 9), dtype=np.float32)
+    boxes = tf.zeros((text_box_restored.shape[0], 9), dtype=np.float32) # Xander changed from np.
     boxes[:, :8] = text_box_restored.reshape((-1, 8))
     boxes[:, 8] = score_map[xy_text[:, 0], xy_text[:, 1]]
     timer['restore'] = time.time() - start
