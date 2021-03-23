@@ -15,7 +15,7 @@ def generator(input_images_dir, input_gt_dir, input_size=512, batch_size=12, ran
     # data_loader = SynthTextLoader()
     data_loader = ICDARLoader(edition='13', shuffle=True)
     # image_list = np.array(data_loader.get_images(FLAGS.training_data_dir))
-    image_list = tf.array(data_loader.get_images(input_images_dir)) # Xander changed from np.
+    image_list = np.array(data_loader.get_images(input_images_dir))
     # print('{} training images in {} '.format(image_list.shape[0], FLAGS.training_data_dir))
     index = np.arange(0, image_list.shape[0])
     while True:
@@ -75,7 +75,7 @@ def generator(input_images_dir, input_gt_dir, input_size=512, batch_size=12, ran
                 # pad the image to the training input size or the longer side of image
                 new_h, new_w, _ = im.shape
                 max_h_w_i = np.max([new_h, new_w, input_size])
-                im_padded = tf.zeros((max_h_w_i, max_h_w_i, 3), dtype=np.uint8) # Xander changed from .np
+                im_padded = np.zeros((max_h_w_i, max_h_w_i, 3), dtype=np.uint8)
                 im_padded[:new_h, :new_w, :] = im.copy()
                 im = im_padded
                 # resize the image to input size
@@ -100,7 +100,7 @@ def generator(input_images_dir, input_gt_dir, input_size=512, batch_size=12, ran
                 if len(text_labels) == 0:
                     continue
 
-                boxes_mask = tf.array([count] * len(rectangles)) # Xander changed from .np
+                boxes_mask = np.array([count] * len(rectangles)) 
 
                 count += 1
 
